@@ -15,7 +15,19 @@ Create and activate the virtual environment:
 ```bash
 python3 -m venv venv
 source venv/bin/activate
+
 ```
+windows
+```bash
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+```
+
+
 
 Install dependencies:
 
