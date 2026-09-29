@@ -35,7 +35,7 @@ Update `.env` with the PostgreSQL credentials:
 DB_NAME=your_DB_Name
 DB_USER=your_DB_User
 DB_PASSWORD=your_Password
-DB_HOST=localhost
+DB_HOST=your_host
 DB_PORT=5432
 ```
 
