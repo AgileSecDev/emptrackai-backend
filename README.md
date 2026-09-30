@@ -2,6 +2,8 @@
 
 Django backend for admin registration using PostgreSQL.
 
+The project can be developed on Windows, macOS, or Linux. Install Python and PostgreSQL for your operating system before setup.
+
 ## Requirements
 
 - Python 3.14+
@@ -10,23 +12,50 @@ Django backend for admin registration using PostgreSQL.
 
 ## Setup
 
-Create and activate the virtual environment:
+Create a virtual environment from the project directory. On Windows, use `py -3` if `python` is not available; on macOS or Linux, use `python3` if needed:
 
 ```bash
-python3 -m venv venv
+python -m venv venv
+```
+
+Activate it in your shell:
+
+```powershell
+# Windows PowerShell
+venv\Scripts\Activate.ps1
+```
+
+```bat
+:: Windows Command Prompt
+venv\Scripts\activate.bat
+```
+
+```bash
+# macOS or Linux
 source venv/bin/activate
 ```
 
-Install dependencies:
+Install the project dependencies from `requirements.txt`:
 
 ```bash
-pip install django psycopg python-dotenv
+python -m pip install -r requirements.txt
 ```
 
-Create the local environment file:
+Create the local environment file. Use the command for your shell:
 
 ```bash
+# macOS or Linux
 cp .env.example .env
+```
+
+```powershell
+# Windows PowerShell
+Copy-Item .env.example .env
+```
+
+```bat
+:: Windows Command Prompt
+copy .env.example .env
 ```
 
 Update `.env` with the PostgreSQL credentials:
@@ -40,6 +69,7 @@ DB_PORT=5432
 ```
 
 The `.env` file is ignored by Git and must not be committed.
+Make sure PostgreSQL is running and the database and user configured above exist before applying migrations.
 
 
 ## Migrations
@@ -47,25 +77,25 @@ The `.env` file is ignored by Git and must not be committed.
 Apply Django migrations:
 
 ```bash
-./venv/bin/python manage.py migrate
+python manage.py migrate
 ```
 
 If the `admins` table already exists and matches the Django model, use:
 
 ```bash
-./venv/bin/python manage.py migrate --fake-initial
+python manage.py migrate --fake-initial
 ```
 
 Check the project:
 
 ```bash
-./venv/bin/python manage.py check
+python manage.py check
 ```
 
 ## Run the Server
 
 ```bash
-./venv/bin/python manage.py runserver
+python manage.py runserver
 ```
 
 The server runs at `http://127.0.0.1:8000/`.
