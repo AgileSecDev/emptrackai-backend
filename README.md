@@ -57,6 +57,17 @@ Then activate the environment again:
 pip install django psycopg python-dotenv
 ```
 
+```bash
+which python
+python --version
+python -m pip --version
+```
+```bash
+python -m pip install --upgrade pip
+
+python -m pip install django psycopg[binary] python-dotenv
+```
+
 ---
 
 ## PostgreSQL Setup
@@ -68,6 +79,8 @@ Make sure PostgreSQL is installed and running.
 ```bash
 psql postgres
 ```
+
+
 
 Create the PostgreSQL user:
 
